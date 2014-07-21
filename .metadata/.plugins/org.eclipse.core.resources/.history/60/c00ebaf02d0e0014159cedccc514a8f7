@@ -1,0 +1,17 @@
+package id.go.lemhannas.go.latihanJava;
+
+public class Segitiga {
+
+	double LuasSegitiga;
+	double tinggi;
+	double alas;
+	
+	public void HitungLuas(double a, double t) {
+		this.tinggi = t;
+		this.alas = a;
+		
+		this.LuasSegitiga = this.tinggi * this.alas;
+		System.out.println("Luas Segitiga yg anda hitung adalah : "+ LuasSegitiga);
+	}
+
+}

@@ -1,0 +1,37 @@
+package id.go.lemhannas.go.latihanJava;
+
+import java.util.Scanner;
+
+public class HitungLuas {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Bentuk bentuk;
+		
+		Segitiga segitiga				= new Segitiga();
+		JajaranGenjang jajarangenjang	= new JajaranGenjang();
+		PersegiPanjang persegipanjang	= new PersegiPanjang();
+		
+		System.out.println("Masukkan Panjang Alas : ");
+		Scanner in = new Scanner(System.in);
+		int panjangalas = in.nextInt();
+		
+		System.out.println("Masukkan Tingginya : ");
+		int tingginya = in.nextInt();
+		
+		bentuk = segitiga;
+		bentuk.LuasBangunan(panjangalas, tingginya);
+		
+		bentuk = jajarangenjang;
+		bentuk.LuasBangunan(panjangalas, tingginya);
+		
+		bentuk = persegipanjang;
+		bentuk.LuasBangunan(panjangalas, tingginya);
+		
+		
+		
+		
+		
+	}
+
+}

@@ -1,0 +1,25 @@
+package id.go.lemhannas.latihan;
+
+import java.util.Scanner;
+
+public class Latihan001 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		int b;		
+		System.out.print("Masukkan sebuah angka : ");
+		Scanner masukan = new Scanner(System.in);
+		b = masukan.nextInt();
+		
+		System.out.println("Nilai booleannya adalah : "+b);
+		if (b%2==0) {
+			System.out.println("Bilangan genap");
+					}
+		else
+			{
+			System.out.println("Bilangan Ganjil");
+			}
+		masukan.close();
+	}
+
+}

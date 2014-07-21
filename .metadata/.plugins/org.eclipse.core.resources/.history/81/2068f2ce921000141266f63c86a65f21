@@ -1,0 +1,250 @@
+package id.go.lemhannas.latihanswing;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import javax.swing.JLabel;
+
+public class kalkulator extends JFrame {
+
+	private JPanel contentPane;
+	private JTextField lbltampilan;
+	
+	int variabel1,variabel2,operator, hasil;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					kalkulator frame = new kalkulator();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public kalkulator() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 281, 263);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		lbltampilan = new JTextField();
+		lbltampilan.setBounds(10, 11, 174, 48);
+		contentPane.add(lbltampilan);
+		lbltampilan.setColumns(10);
+		
+		JLabel lblNotifikasi = new JLabel("");
+		JButton btn0 = new JButton("0");
+		btn0.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbltampilan.setText(lbltampilan.getText()+btn0.getText());
+				
+			}
+		});
+		btn0.setBounds(10, 194, 88, 23);
+		contentPane.add(btn0);
+		
+		JButton btn1 = new JButton("1");
+		btn1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbltampilan.setText(lbltampilan.getText()+btn1.getText());	
+			}
+		});
+		btn1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btn1.setBounds(10, 160, 51, 23);
+		contentPane.add(btn1);
+		
+		JButton btn2 = new JButton("2");
+		btn2.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbltampilan.setText(lbltampilan.getText()+btn2.getText());	
+			}
+		});
+		btn2.setBounds(71, 160, 52, 23);
+		contentPane.add(btn2);
+		
+		JButton btn3 = new JButton("3");
+		btn3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbltampilan.setText(lbltampilan.getText()+btn3.getText());
+			}
+		});
+		btn3.setBounds(133, 160, 51, 23);
+		contentPane.add(btn3);
+		
+		JButton btn4 = new JButton("4");
+		btn4.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbltampilan.setText(lbltampilan.getText()+btn4.getText());
+			}
+		});
+		btn4.setBounds(10, 123, 51, 23);
+		contentPane.add(btn4);
+		
+		JButton btn5 = new JButton("5");
+		btn5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbltampilan.setText(lbltampilan.getText()+btn5.getText());}
+		});
+		btn5.setBounds(71, 123, 52, 23);
+		contentPane.add(btn5);
+		
+		JButton btn6 = new JButton("6");
+		btn6.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbltampilan.setText(lbltampilan.getText()+btn6.getText());}
+		});
+		btn6.setBounds(133, 123, 51, 23);
+		contentPane.add(btn6);
+		
+		JButton btn7 = new JButton("7");
+		btn7.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbltampilan.setText(lbltampilan.getText()+btn7.getText());
+			}
+		});
+		btn7.setBounds(10, 89, 51, 23);
+		contentPane.add(btn7);
+		
+		JButton btn8 = new JButton("8");
+		btn8.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbltampilan.setText(lbltampilan.getText()+btn8.getText());}
+		});
+		btn8.setBounds(72, 89, 51, 23);
+		contentPane.add(btn8);
+		
+		JButton btn9 = new JButton("9");
+		btn9.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				lbltampilan.setText(lbltampilan.getText()+btn9.getText());}
+		});
+		btn9.setBounds(133, 89, 51, 23);
+		contentPane.add(btn9);
+		
+		JButton btnclear = new JButton("<-");
+		btnclear.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				
+				int panjang;
+				String tempTampilan;
+				
+				tempTampilan = lbltampilan.getText();
+				panjang = tempTampilan.length();
+				if (panjang > 0) {
+					lbltampilan.setText(tempTampilan.substring(0, panjang-1));
+				}
+			}
+		});
+		btnclear.setBounds(108, 194, 76, 23);
+		contentPane.add(btnclear);
+		
+		JButton btntambah = new JButton("+");
+		btntambah.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {			
+				lbltampilan.setText(lbltampilan.getText()+"+");						
+			}
+		});
+
+		btntambah.setBounds(194, 89, 51, 23);
+		contentPane.add(btntambah);
+		
+		JButton btnkurang = new JButton("-");
+		btnkurang.setBounds(194, 123, 51, 23);
+		contentPane.add(btnkurang);
+		
+		JButton btnbagi = new JButton("/");
+		btnbagi.setBounds(194, 160, 51, 23);
+		contentPane.add(btnbagi);
+		
+		JButton btnkali = new JButton("*");
+		btnkali.setBounds(194, 194, 51, 23);
+		contentPane.add(btnkali);
+		
+		JButton btnsamadengan = new JButton("=");
+		btnsamadengan.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				int  looping, tempVar1,tempVar2,tempResult, tempLength;
+				String tempString,tempValue, tempOperator;
+				boolean isPass,passVar1,passVar2;
+				isPass = false;
+				passVar1 = false;
+				passVar2 = false;
+				
+				tempString = lbltampilan.getText();
+				tempLength = tempString.length();
+				tempValue = "";
+				
+				if (tempString.contains("+")) {isPass = true;}
+				if (tempString.contains("-")) {isPass = true;}
+				if (tempString.contains("*")) {isPass = true;}
+				if (tempString.contains("/")) {isPass = true;}
+				
+				if(isPass) {
+					lblNotifikasi.setText("");
+					for(looping=0;looping<=tempLength;looping++){
+						if(tempString.substring(looping, 1)!= "+" || tempString.substring(looping, 1)!= "-" || tempString.substring(looping, 1)!= "*" || tempString.substring(looping, 1)!= "/") {
+							tempValue = tempValue+ tempString.substring(looping, 1);
+						} else 
+							{
+							tempVar1 = Integer.parseInt(tempValue);
+							tempOperator=tempString.substring(looping, 1);
+							tempValue = "";
+							}
+						tempValue = tempValue+ tempString.substring(looping, 1);
+						
+					}
+				} else
+				{
+					lblNotifikasi.setText("Operator tidak ada!");
+				}
+			}
+		});
+		btnsamadengan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btnsamadengan.setBounds(194, 11, 51, 48);
+		contentPane.add(btnsamadengan);
+		
+		
+		lblNotifikasi.setBounds(10, 64, 174, 14);
+		contentPane.add(lblNotifikasi);
+	}
+}

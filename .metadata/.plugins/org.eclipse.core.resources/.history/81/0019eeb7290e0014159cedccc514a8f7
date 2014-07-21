@@ -1,0 +1,14 @@
+package id.go.lemhannas.go.latihanJava;
+
+public class HitungLuas {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Bentuk bentuk;
+		
+		Segitiga segitiga				= new Segitiga();
+		JajaranGenjang jajarangenjang	= new JajaranGenjang();
+		
+	}
+
+}
